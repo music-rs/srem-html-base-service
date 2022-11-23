@@ -1,0 +1,94 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/live-concert3.jpg');">
+        <div class="filter"></div>
+        <div class="container" style="margin-top: -100px;">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register bg-dark">
+                        <h3 class="title text-white">¡Regístrate en SREM!</h3>
+
+                        <form class="register-form">
+                            <label>Nombres</label>
+                            <div class="input-group form-group-no-border"
+                                [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-single-02"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" [(ngModel)]="usuarioProfile.nombre" name="nombre" class="form-control" placeholder="Nombres" (focus)="focus=true"
+                                    (blur)="focus=false">
+                            </div>
+
+                            <label>Apellidos</label>
+                            <div class="input-group form-group-no-border"
+                                [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-single-02"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" [(ngModel)]="usuarioProfile.apellidoPaterno" name="apellidoPaterno" class="form-control" placeholder="Apellidos" (focus)="focus1=true"
+                                    (blur)="focus1=false">
+                            </div>
+
+                            <label>Usuario</label>
+                            <div class="input-group form-group-no-border"
+                                [ngClass]="{'input-group-focus':focus2===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-circle-10"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" [(ngModel)]="usuarioProfile.nombreUsuario" name="nombreUsuario" class="form-control" placeholder="Nombre de usuario" (focus)="focus2=true"
+                                    (blur)="focus2=false">
+                            </div>
+
+                            <label>Email</label>
+                            <div class="input-group form-group-no-border"
+                                [ngClass]="{'input-group-focus':focus3===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-email-85"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" [(ngModel)]="usuarioProfile.email" name="email" class="form-control" placeholder="Email" (focus)="focus3=true"
+                                    (blur)="focus3=false">
+                            </div>
+
+                            <label>Password</label>
+                            <div class="input-group form-group-no-border"
+                                [ngClass]="{'input-group-focus':focus4===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-key-25"></i>
+                                    </span>
+                                </div>
+                                <input type="password" [(ngModel)]="usuarioProfile.password" name="password" class="form-control" placeholder="Password" (focus)="focus4=true"
+                                    (blur)="focus5=false">
+                            </div>
+                            <button type="submit" class="btn btn-info btn-block btn-round" (click)="registrarUsuario()">Regístrate</button>
+
+                        </form>
+                        <br>
+                        <hr />
+                        <div class="row justify-content-md-center text-center">
+                            <div class="text-center col-md-12 col-lg-8">
+                                <label>¿Ya tienes una cuenta?</label>
+                                <a href="#/signup" class="btn btn-success btn-block btn-round"
+                                    style="margin-top: 10px;">Inicia sesión</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="footer register-footer text-center">
+                <h6>&copy;{{test | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+            </div>-->
+        </div>
+    </div>
+</div>

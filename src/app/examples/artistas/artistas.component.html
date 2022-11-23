@@ -1,0 +1,229 @@
+<div class="page-header section-dark" style="background-image: url('assets/img/live-concert.jpg')">
+  <div class="filter"></div>
+  <div class="content-center">
+    <div class="container">
+      <div class="title-brand">
+        <!--<div class="angular-logo">
+                  <img src="assets/img/angular2-logo.png" alt="">
+              </div>-->
+        <h1 class="presentation-title">SREM</h1>
+        <div class="fog-low">
+          <img src="assets/img/fog-low.png" alt="">
+        </div>
+        <div class="fog-low right">
+          <img src="assets/img/fog-low.png" alt="">
+        </div>
+      </div>
+
+      <h2 class="presentation-subtitle text-center">Sistema de Recomendación de Eventos de Música</h2>
+      <br><br>
+      <!--Descripciones-->
+      <!--<h5 class="description text-center">¿Esta interesado en buscar conciertos y festivales de música personalizados
+              de acuerdo a su estilo?
+          </h5>
+          <h5 class="description text-center">¡No pierda más tiempo! Nosotros conocemos tu estilo y queremos que disfrutes
+              de los mejores eventos de música</h5>-->
+
+      <!--<br />
+          <div class="row justify-content-md-center sharing-area text-center">
+              <div class="text-center col-md-12 col-lg-8">
+                  <a href="#/register" class="btn btn-outline-neutral btn-round"><i
+                          class="fa fa-play"></i>Encuentre recomendaciones!!</a>
+              </div>
+          </div>-->
+    </div>
+  </div>
+  <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+</div>
+<!--Cabecera alterna-->
+<!--
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/daniel-olahh.jpg');">
+  <div class="filter"></div>
+  <div class="container">
+      <div class="motto text-center">
+          <h1>Example page</h1>
+          <h3>Start designing your landing page here.</h3>
+          <br />
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
+          <button type="button" class="btn btn-outline-neutral btn-round">Download</button>
+      </div>
+  </div>
+</div>
+-->
+
+<div class="main">
+  <div class="section">
+
+    <div class="container">
+      <h2 class="title text-center" style="margin-bottom: 50px;">Encuentra a tus artistas favoritos !!</h2>
+
+      <form class="register-form">
+        <!--<div class="row justify-content-md-center sharing-area text-center">
+          <div class="text-center col-md-12 col-lg-8">
+            <h3>Ingresa algunos datos de tus artistas favoritos</h3>
+          </div>
+        </div>-->
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+
+            <label>Nombre</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-note-03"></i>
+                </span>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Nombre del artista" (focus)="focus=true"
+                (blur)="focus=false">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <label>Género</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-note-03"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Género del artista" (focus)="focus1=true"
+                (blur)="focus1=false">
+            </div>
+
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6">
+
+            <label>Evento de música</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus2===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-calendar-60"></i>
+                </span>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Evento de música en el que participará el artista"
+                (focus)="focus2=true" (blur)="focus2=false">
+            </div>
+          </div>
+          <!--
+          <div class="col-sm-6 mr-auto ml-auto">
+            <label>Fecha del evento</label>
+
+            <div class="input-group date form-group-no-border" [ngClass]="{'input-group-focus':focus3===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus3=true" (blur)="focus3=false" />
+              <div class="input-group-append">
+                <span class="glyphicon glyphicon-calendar input-group-text">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          -->
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto text-center">
+            <button type="submit" class="btn btn-outline-success btn-round btn-lg"><i class="nc-icon nc-zoom-split"></i>
+              Empezecemos la Búsqueda</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br>
+    <hr>
+    <div class="section text-center">
+      <div class="container">
+        <h2 class="title">Resultados de la búsqueda</h2>
+        <h3 class="text-center">No se han encontrado resultados :(</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="#avatar"><img src="./assets/img/artists/the-strokes.jpg" alt="..."></a>
+              </div>
+              <div class="card-block">
+                <a href="#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title">The Strokes</h4>
+                    <h6 class="card-category">Indie rock, Garage rock, Post-punk revival</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                  The strokes es una banda de rock originaria de Nueva York Estados Unidos formada en
+                  1998. Tras el lanzamiento de su álbum debut Is This It en 2001, muchos críticos
+                  nombraron al grupo como: «Los salvadores del rock». Han vendido más de 8 millones de
+                  copias en todo el mundo.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="#pkp" class="btn btn-danger btn-round" style="margin-bottom: 10px;"><i
+                    class="nc-icon nc-favourite-28"></i> Añadir a favoritos</a>
+                <a href="#pkp" class="btn btn-info btn-round">Ver detalles del artista</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="#avatar"><img src="./assets/img/artists/muse.jpg" alt="..."></a>
+              </div>
+              <div class="card-block">
+                <a href="#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title">MUSE</h4>
+                    <h6 class="card-category">Rock alternativo, Rock progresivo, Art rock</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                  Muse es una banda británica de rock alternativo formada en 1994 en Inglaterra. Desde su
+                  formación en la década de los 90, sus integrantes son: Matt Bellamy; Dominic Howard; y
+                  Christopher Wolstenholme.​​
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="#pkp" class="btn btn-danger btn-round" style="margin-bottom: 10px;"><i
+                    class="nc-icon nc-favourite-28"></i> Añadir a favoritos</a>
+                <a href="#pkp" class="btn btn-info btn-round">Ver detalles del artista</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="#avatar"><img src="./assets/img/artists/armonia-10.jpg" alt="..."></a>
+              </div>
+              <div class="card-block">
+                <a href="#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title">Armonia 10</h4>
+                    <h6 class="card-category">Cumbia</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                  Armonía 10 es un grupo musical de cumbia peruana. Nació el año de 1972 en el
+                  Asentamiento Humano "San Martín", en el Sector Oeste de la ciudad de Piura.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="#pkp" class="btn btn-danger btn-round" style="margin-bottom: 10px;"><i
+                    class="nc-icon nc-favourite-28"></i> Añadir a favoritos</a>
+                <a href="#pkp" class="btn btn-info btn-round">Ver detalles del artista</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

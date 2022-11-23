@@ -1,0 +1,227 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true"
+        style="background-image: url('./assets/img/live-concert2.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="./assets/img/faces/user-general.png" alt="Circle Image"
+                        class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h2 class="title">Jhonatan Ibañez<br /></h2>
+                    <h6 class="description">Estudiante Universitario</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <p>Me gusta escuchar todo tipo de música y me apasiona estar en los conciertos. Tengo una gran
+                        pasión por la música</p>
+                    <br />
+                    <button class="btn btn-outline-success btn-round"><i class="fa fa-cog"></i> Administrar
+                        cuenta</button>
+                </div>
+            </div>
+            <br />
+            <div class="row justify-content-md-center sharing-area text-center">
+                <div class="text-center col-md-12 col-lg-8">
+                    <h3>Intereses</h3>
+                </div>
+            </div>
+            <br />
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ngb-tabset [justify]="'center'">
+                        <ngb-tab title="Eventos de música">
+                            <ng-template ngbTabContent>
+                                <!--EN CASO QUE NO TENGA FAVORITOS-->
+                                <!--<h3 class="text-muted">Aún no tienes eventos de música favoritos :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round"><i class="nc-icon nc-calendar-60"></i>
+                                    Próximos
+                                    eventos</button>-->
+                                <!--CUANDO TIENE FAVORITOS-->
+                                <div class="row following" id="follows">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-3 ml-auto mr-auto">
+                                                        <!--Imagen del evento-->
+                                                        <!--
+                                                        <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                            alt="Circle Image"
+                                                            class="img-circle img-no-padding img-responsive">
+                                                        -->
+                                                        <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-calendar-60"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-9 ml-auto">
+                                                        <h6>MUSE en Lima<br /><small>8 de Octubre - 8:00 pm. - Parcela H
+                                                                Jockey Plaza</small></h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-3 ml-auto mr-auto">
+                                                        <!--Imagen del evento-->
+                                                        <!--
+                                                                <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                    alt="Circle Image"
+                                                                    class="img-circle img-no-padding img-responsive">
+                                                                -->
+                                                        <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-calendar-60"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-9 ml-auto ml-auto">
+                                                        <h6>Vivo x el Rock<br /><small>23 de Noviembre - 11 am. -
+                                                                Estadio San Marcos</small></h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Artistas">
+                            <ng-template ngbTabContent>
+                                <!--EN CASO QUE NO TENGA FAVORITOS-->
+                                <h3 class="text-muted">Aún no tienes artistas favoritos :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round"><i class="nc-icon nc-note-03"></i> Conoce a
+                                    los artistas</button>
+                                <!--CUANDO TIENE FAVORITOS-->
+                                <div class="row following" id="follows">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-3 ml-auto mr-auto">
+                                                        <!--Imagen del evento-->
+
+                                                        <img src="./assets/img/artists/the-strokes.jpg"
+                                                            alt="Circle Image"
+                                                            class="img-circle img-no-padding img-responsive">
+                                                        <!--
+                                                        <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-calendar-60"></i>
+                                                            </div>
+                                                        </div>
+                                                        -->
+                                                    </div>
+
+                                                    <div class="col-sm-9 ml-auto">
+                                                        <h6>The Strokes<br /><small>Indie rock, Garage rock, Post-punk
+                                                                revival</small></h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-3 ml-auto mr-auto">
+                                                        <!--Imagen del evento-->
+
+                                                        <img src="./assets/img/artists/muse.jpg" alt="Circle Image"
+                                                            class="img-circle img-no-padding img-responsive">
+
+                                                        <!--
+                                                                  <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-calendar-60"></i>
+                                                            </div>
+                                                        </div>
+                                                    -->
+                                                    </div>
+
+                                                    <div class="col-sm-9 ml-auto ml-auto">
+                                                        <h6>MUSE<br /><small>Rock alternativo, Rock progresivo, Art
+                                                                rock</small></h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Géneros musicales">
+                            <ng-template ngbTabContent>
+                                <!--EN CASO QUE NO TENGA FAVORITOS-->
+                                <h3 class="text-muted">Aún no tienes géneros musicales favoritos :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round"><i class="fa fa-cog"> </i> Administrar
+                                    cuenta</button>
+                                <!--CUANDO TIENE FAVORITOS-->
+                                <div class="row following" id="follows">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-3 ml-auto mr-auto">
+                                                        <!--Imagen del evento-->
+                                                        <!--
+                                                            <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                alt="Circle Image"
+                                                                class="img-circle img-no-padding img-responsive">
+                                                            -->
+                                                        <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-note-03"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-9 ml-auto">
+                                                        <h6>Rock</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-3 ml-auto mr-auto">
+                                                        <!--Imagen del evento-->
+                                                        <!--
+                                                                    <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                        alt="Circle Image"
+                                                                        class="img-circle img-no-padding img-responsive">
+                                                                    -->
+                                                        <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-note-03"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-9 ml-auto ml-auto">
+                                                        <h6>Indie</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

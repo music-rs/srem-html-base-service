@@ -1,0 +1,398 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('./assets/img/live-concert2.jpg');">
+    <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+    <form class="register-form">
+      <div class="container">
+        <div class="owner">
+          <div class="avatar">
+            <img src="./assets/img/faces/user-general.png" alt="Circle Image"
+              class="img-circle img-no-padding img-responsive">
+          </div>
+          <div class="name">
+            <h2 class="title">Administrar cuenta<br /></h2>
+          </div>
+        </div>
+        <div class="row justify-content-md-center sharing-area text-center">
+          <div class="text-center col-md-12 col-lg-8">
+            <h3>Datos Personales</h3>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-6 mr-auto ml-auto">
+
+            <label>Nombres</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-single-02"></i>
+                </span>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Nombres" (focus)="focus=true" (blur)="focus=false">
+            </div>
+          </div>
+          <div class="col-sm-6 mr-auto ml-auto">
+            <label>Apellidos</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-single-02"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Apellidos" (focus)="focus1=true"
+                (blur)="focus1=false">
+            </div>
+
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6 mr-auto ml-auto">
+
+            <label>Usuario</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus2===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-circle-10"></i>
+                </span>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Usuario" (focus)="focus2=true" (blur)="focus2=false">
+            </div>
+          </div>
+          <div class="col-sm-6 mr-auto ml-auto">
+            <label>Email</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus3==true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-key-25"></i>
+                </span>
+              </div>
+              <input type="email" class="form-control" placeholder="Email" (focus)="focus3=true" (blur)="focus3=false">
+            </div>
+
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6">
+
+            <label>Descrpción breve</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus4===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-badge"></i>
+                </span>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Descrpción breve" (focus)="focus4=true"
+                (blur)="focus4=false">
+            </div>
+          </div>
+
+        </div>
+
+        <br />
+        <div class="row">
+          <div class="col-sm-12 mr-auto ml-auto"
+            style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+            <label>Exprésate</label>
+            <textarea class="form-control" rows="4"
+              placeholder="Queremos conocerte :) Háblanos más de tu pasión por la música ..."
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;"></textarea>
+          </div>
+        </div>
+        <hr>
+        <div class="row justify-content-md-center sharing-area text-center">
+          <div class="text-center col-md-12 col-lg-8">
+            <h3>Intereses</h3>
+          </div>
+        </div>
+        <br />
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <ngb-tabset [justify]="'center'">
+              <ngb-tab title="Eventos de música">
+                <ng-template ngbTabContent>
+                  <!--EN CASO QUE NO TENGA FAVORITOS-->
+                  <h3 class="text-muted">Aún no tienes eventos de música favoritos :(</h3>
+                  <br>
+                  <button class="btn btn-warning btn-round"><i class="nc-icon nc-calendar-60"></i>
+                    Próximos
+                    eventos</button>
+                  <!--CUANDO TIENE FAVORITOS-->
+                  <div class="row following" id="follows">
+                    <div class="col-md-6 ml-auto mr-auto">
+                      <ul class="list-unstyled follows">
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+                              <!--
+                                                        <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                            alt="Circle Image"
+                                                            class="img-circle img-no-padding img-responsive">
+                                                        -->
+                              <div class=" info">
+                                <div class="icon icon-info">
+                                  <i class="nc-icon nc-calendar-60"></i>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>MUSE en Lima<br /><small>8 de Octubre - 8:00 pm. - Parcela H
+                                  Jockey Plaza</small></h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <hr />
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+                              <!--
+                                                                <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                    alt="Circle Image"
+                                                                    class="img-circle img-no-padding img-responsive">
+                                                                -->
+                              <div class=" info">
+                                <div class="icon icon-info">
+                                  <i class="nc-icon nc-calendar-60"></i>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>Vivo x el Rock<br /><small>23 de Noviembre - 11 am. -
+                                  Estadio San Marcos</small></h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Artistas">
+                <ng-template ngbTabContent>
+                  <!--EN CASO QUE NO TENGA FAVORITOS-->
+                  <h3 class="text-muted">Aún no tienes artistas favoritos :(</h3>
+                  <br>
+                  <button class="btn btn-warning btn-round"><i class="nc-icon nc-note-03"></i> Conoce a
+                    los artistas</button>
+                  <!--CUANDO TIENE FAVORITOS-->
+                  <div class="row following" id="follows">
+                    <div class="col-md-6 ml-auto mr-auto">
+                      <ul class="list-unstyled follows">
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+
+                              <img src="./assets/img/artists/the-strokes.jpg" alt="Circle Image"
+                                class="img-circle img-no-padding img-responsive">
+                              <!--
+                                                        <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-calendar-60"></i>
+                                                            </div>
+                                                        </div>
+                                                        -->
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>The Strokes<br /><small>Indie rock, Garage rock, Post-punk
+                                  revival</small></h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <hr />
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+
+                              <img src="./assets/img/artists/muse.jpg" alt="Circle Image"
+                                class="img-circle img-no-padding img-responsive">
+
+                              <!--
+                                                                  <div class=" info">
+                                                            <div class="icon icon-info">
+                                                                <i class="nc-icon nc-calendar-60"></i>
+                                                            </div>
+                                                        </div>
+                                                    -->
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>MUSE<br /><small>Rock alternativo, Rock progresivo, Art
+                                  rock</small></h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Géneros musicales">
+                <ng-template ngbTabContent>
+                  <!--CUANDO TIENE FAVORITOS-->
+                  <div class="row following" id="follows">
+                    <div class="col-md-6 ml-auto mr-auto">
+                      <ul class="list-unstyled follows">
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+                              <!--
+                                                            <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                alt="Circle Image"
+                                                                class="img-circle img-no-padding img-responsive">
+                                                            -->
+                              <div class=" info">
+                                <div class="icon icon-info">
+                                  <i class="nc-icon nc-note-03"></i>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>Rock</h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <hr />
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+                              <!--
+                                                                    <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                        alt="Circle Image"
+                                                                        class="img-circle img-no-padding img-responsive">
+                                                                    -->
+                              <div class=" info">
+                                <div class="icon icon-info">
+                                  <i class="nc-icon nc-note-03"></i>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>Indie</h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <hr />
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                              <!--Imagen del evento-->
+                              <!--
+                                                                    <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                        alt="Circle Image"
+                                                                        class="img-circle img-no-padding img-responsive">
+                                                                    -->
+                              <div class=" info">
+                                <div class="icon icon-info">
+                                  <i class="nc-icon nc-note-03"></i>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-7 col-sm-4 ml-auto">
+                              <h6>Rap</h6>
+                            </div>
+                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto text-center">
+            <button type="submit" class="btn btn-outline-success btn-round btn-lg"><i class="fa fa-save"></i> Guardar
+              cambios</button>
+            &nbsp;
+            <button class="btn btn-outline-danger btn-round btn-lg"><i class="fa fa-close"></i> Descartar
+              cambios</button>
+          </div>
+        </div>
+        <br />
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="wrapper">
+        <div class="page-header" style="background-image: url('./assets/img/live-concert3.jpg');">
+            <div class="filter"></div>
+            <div class="container" style="margin-top: -100px;">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                        <div class="card card-register bg-dark">
+                            <h3 class="title text-white">¡Inicia sesión en SREM!</h3>
+    
+                            <form class="register-form">
+                                <!--
+                                <div class="row justify-content-md-center text-center">
+                                    <div class="text-center col-md-12 col-lg-8">
+                                        <a href="#/signup" class="btn btn-facebook-bg facebook-sharrre btn-round" rel="tooltip"
+                                            title="Share!" style="margin: 30px -40px 10px -40px;">
+                                            <i class="fa fa-facebook-square"></i> Continuar con Facebook
+                                        </a>
+                                    </div>
+                                </div>
+                                -->
+                                <label>Usuario/Email</label>
+                                <div class="input-group form-group-no-border"
+                                    [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-email-85"></i>
+                                        </span>
+                                    </div>
+    
+                                    <input type="text" [(ngModel)]="usuarioProfileForm.nombreUsuario" name="nombreUsuario" class="form-control" placeholder="Usuario/Email" (focus)="focus=true"
+                                        (blur)="focus=false">
+                                </div>
+    
+                                <label>Password</label>
+                                <div class="input-group form-group-no-border"
+                                    [ngClass]="{'input-group-focus':focus1===true}">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-key-25"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" [(ngModel)]="usuarioProfileForm.password" name="password" class="form-control" placeholder="Password" (focus)="focus1=true"
+                                        (blur)="focus1=false">
+                                </div>
+                                <button type="submit" class="btn btn-info btn-block btn-round" (click)="autenticarUsuario()">Iniciar sesión</button>
+    
+                            </form>
+                            <div class="forgot" style="margin-top: -20px;">
+                                <a href="#/signup" class="btn btn-link btn-info">¿Olvidó su contraseña?</a>
+                            </div>
+                            <hr />
+                            <div class="row justify-content-md-center text-center">
+                                <div class="text-center col-md-12 col-lg-8">
+                                    <label>¿No tienes una cuenta?</label>
+                                    <a href="#/register" class="btn btn-success btn-block btn-round"
+                                        style="margin-top: 10px;">Regístrate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="footer register-footer text-center">
+                    <h6>&copy;{{test | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+                </div>-->
+            </div>
+        </div>
+    </div>

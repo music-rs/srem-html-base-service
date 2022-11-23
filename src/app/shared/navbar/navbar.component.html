@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container" *ngIf="!isLogin()">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="#/landing">SREM - Sistema de Recomendación de eventos de música</a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
+                data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <!--<li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <p class="d-lg-none">Twitter</p>
+                    </a>
+                </li>-->
+                <li class="nav-item" *ngIf="!isEventos()">
+                    <a href="#/eventos" class="nav-link" target="_self"><i class="nc-icon nc-calendar-60"></i>
+                        Próximos eventos</a>
+                </li>
+                <li class="nav-item" *ngIf="!isArtistas()">
+                    <a href="#/artistas" class="nav-link" target="_self"><i class="nc-icon nc-note-03"></i> Conoce a
+                        los Artistas</a>
+                </li>
+                <li class="nav-item" *ngIf="!isLogin() && !isUserProfile() && !isUserConfig()">
+                    <a href="#/user-profile" target="_self" class="btn btn-primary btn-round"><i
+                            class="nc-icon nc-circle-10"></i>
+                        Ver perfil</a>
+                </li>
+                <li class="nav-item" *ngIf="isUserProfile() || isEventos() || isArtistas()">
+                    <a href="#/landing" target="_self" class="btn btn-danger btn-round"><i
+                            class="nc-icon nc-minimal-left"></i>
+                        Regresar</a>
+                </li>
+                <!--<li class="nav-item" *ngIf="!isLogin()">
+                    <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
+                    <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Kit</a>
+                </li>-->
+
+            </ul>
+        </div>
+    </div>
+</nav>

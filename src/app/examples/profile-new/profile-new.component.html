@@ -1,0 +1,246 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('./assets/img/live-concert2.jpg');">
+    <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+    <form class="register-form">
+      <div class="container">
+        <div class="owner">
+          <div class="avatar">
+            <img src="./assets/img/faces/user-general.png" alt="Circle Image"
+              class="img-circle img-no-padding img-responsive">
+          </div>
+          <div class="name">
+            <h2 class="title text-center" style="margin-bottom: 50px;">{{usuarioProfile.nombre}}, ¡¡¡Bienvenido a SREM!!
+            </h2>
+            <h3 class="title text-center" style="margin-bottom: 50px;">¿Estás listo para conocer los mejores eventos de
+              música de Lima?</h3>
+          </div>
+        </div>
+        <div class="row justify-content-md-center sharing-area text-center">
+          <div class="text-center col-md-12 col-lg-8">
+            <h3 class="title text-center" style="margin-bottom: 50px;">¿Nos podrías contar un poco más sobre ti?</h3>
+          </div>
+        </div>
+        <br>
+        <!--<div class="row">
+          <div class="col-sm-6">
+
+            <label>Descrpción breve</label>
+            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus4===true}"
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-badge"></i>
+                </span>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Descrpción breve de tu persona" (focus)="focus4=true"
+                (blur)="focus4=false">
+            </div>
+          </div>
+
+        </div>-->
+
+        <br />
+        <div class="row">
+          <div class="col-sm-12 mr-auto ml-auto"
+            style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;">
+            <label>Exprésate</label>
+            <textarea [(ngModel)]="usuarioProfile.descripcionUsuario" name="descripcionUsuario" class="form-control"
+              rows="4" placeholder="Queremos conocerte :) Háblanos más de tu pasión por la música ..."
+              style="border: #addada; border-right-style: solid; border-bottom-style: solid; border-width: 4px; border-radius: 25px; padding: 10px;"></textarea>
+          </div>
+        </div>
+        <hr>
+        <div class="row justify-content-md-center sharing-area text-center">
+          <div class="text-center col-md-12 col-lg-8">
+            <h3>Intereses</h3>
+          </div>
+        </div>
+        <br />
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <ngb-tabset [justify]="'center'">
+              <ngb-tab title="Eventos de música">
+                <ng-template ngbTabContent>
+                  <!--CUANDO TIENE FAVORITOS-->
+                  <div class="row following" id="follows">
+                    <div class="col-md-6 ml-auto mr-auto">
+                      <ul class="list-unstyled follows">
+                        <div *ngFor="let evento of eventosList; let i = index">
+                          <li>
+                            <div class="row">
+                              <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                <!--Imagen del evento-->
+
+                                <img style="max-width: 140px;" *ngIf="evento.imagen" [src]="evento.imagen"
+                                  alt="icon icon-info">
+
+                                <div *ngIf="!evento.imagen" class=" info">
+                                  <div class="icon icon-info">
+                                    <i class="nc-icon nc-calendar-60"></i>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div style="padding-left: 90px; padding-right: 0px;" class="col-md-7 col-sm-4 ml-auto">
+                                <h6 style="margin-right: -90px;">
+                                  {{evento.nombreEvento}}<br /><small>{{evento.fechaYHoraInicio}} -
+                                    {{evento.ubicacion}} </small></h6>
+                              </div>
+                              <div style="padding-left: 110px; padding-right: 0px;"
+                                class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+
+                                    <input #eventoSelect class="form-check-input" type="checkbox" id="{{evento.id}}"
+                                      [value]="eventosCheckbox[i]" name="eventosCheckbox"
+                                      (change)="eventosSeleccionados(eventoSelect,i)" *ngIf="eventosCheckbox[i]"
+                                      checked>
+                                    <input #eventoSelect class="form-check-input" type="checkbox" id="{{evento.id}}"
+                                      [value]="eventosCheckbox[i]" name="eventosCheckbox"
+                                      (change)="eventosSeleccionados(eventoSelect,i)" *ngIf="!eventosCheckbox[i]">
+
+                                    <!--
+                                    <input class="form-check-input" type="checkbox" [name]="eventosCheckbox"
+                                      [(ngModel)]="eventosCheckbox[i]" *ngIf="eventosCheckbox[i]" checked>
+                                    <input class="form-check-input" type="checkbox" [name]="eventosCheckbox"
+                                      [(ngModel)]="eventosCheckbox[i]" *ngIf="!eventosCheckbox[i]">
+-->
+                                    <span class="form-check-sign"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <hr style="margin: 20px -40px;" />
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Artistas">
+                <ng-template ngbTabContent>
+                  <!--CUANDO TIENE FAVORITOS-->
+                  <div class="row following" id="follows">
+                    <div class="col-md-6 ml-auto mr-auto">
+                      <ul class="list-unstyled follows">
+                        <div *ngFor="let artista of artistasList; let i = index">
+                          <li>
+                            <div class="row">
+                              <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                <!--Imagen del evento-->
+
+                                <!-- 
+                                <img src="./assets/img/artists/the-strokes.jpg" alt="Circle Image"
+                                  class="img-circle img-no-padding img-responsive">
+                                  -->
+
+                                <div class=" info">
+                                  <div class="icon icon-info">
+                                    <i class="nc-icon nc-note-03"></i>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-7 col-sm-4 ml-auto">
+                                <h6>{{artista}}<br />
+                                  <!--
+                                  <small>Indie rock, Garage rock, Post-punk revival</small>
+                                  -->
+                                </h6>
+                              </div>
+                              <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input #artistaSelect class="form-check-input" type="checkbox" id="{{artista}}"
+                                      [value]="artistasCheckbox[i]" name="artistasCheckbox"
+                                      (change)="artistasSeleccionados(artistaSelect,i)" *ngIf="artistasCheckbox[i]"
+                                      checked>
+                                    <input #artistaSelect class="form-check-input" type="checkbox" id="{{artista}}"
+                                      [value]="artistasCheckbox[i]" name="artistasCheckbox"
+                                      (change)="artistasSeleccionados(artistaSelect,i)" *ngIf="!artistasCheckbox[i]">
+                                    <span class="form-check-sign"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <hr />
+                        </div>
+
+                      </ul>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Géneros musicales">
+                <ng-template ngbTabContent>
+                  <!--CUANDO TIENE FAVORITOS-->
+                  <div class="row following" id="follows">
+                    <div class="col-md-6 ml-auto mr-auto">
+                      <ul class="list-unstyled follows">
+                        <div *ngFor="let genero of generosList; let i = index">
+                          <li>
+                            <div class="row">
+                              <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                <!--Imagen del evento-->
+                                <!--
+                                                              <img src="./assets/img/faces/clem-onojeghuo-2.jpg"
+                                                                  alt="Circle Image"
+                                                                  class="img-circle img-no-padding img-responsive">
+                                                              -->
+                                <div class=" info">
+                                  <div class="icon icon-info">
+                                    <i class="nc-icon nc-note-03"></i>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-7 col-sm-4 ml-auto">
+                                <h6>{{genero}}</h6>
+                              </div>
+                              <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input #generoSelect class="form-check-input" type="checkbox" id="{{genero}}"
+                                      [value]="generosCheckbox[i]" name="generosCheckbox"
+                                      (change)="generosSeleccionados(generoSelect,i)" *ngIf="generosCheckbox[i]"
+                                      checked>
+                                    <input #generoSelect class="form-check-input" type="checkbox" id="{{genero}}"
+                                      [value]="generosCheckbox[i]" name="generosCheckbox"
+                                      (change)="generosSeleccionados(generoSelect,i)" *ngIf="!generosCheckbox[i]">
+                                    <span class="form-check-sign"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <hr />
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto text-center">
+            <button (click)="guardarPreferencias()" type="submit" class="btn btn-outline-success btn-round btn-lg"><i
+                class="fa fa-save"></i> Guardar
+              preferencias</button>
+          </div>
+        </div>
+        <br />
+      </div>
+    </form>
+  </div>
+
+</div>

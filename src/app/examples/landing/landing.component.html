@@ -1,0 +1,211 @@
+<div class="page-header section-dark" style="background-image: url('assets/img/live-concert.jpg')">
+    <div class="filter"></div>
+    <div class="content-center">
+        <div class="container">
+            <div class="title-brand">
+                <!--<div class="angular-logo">
+                    <img src="assets/img/angular2-logo.png" alt="">
+                </div>-->
+                <h1 class="presentation-title">SREM</h1>
+                <div class="fog-low">
+                    <img src="assets/img/fog-low.png" alt="">
+                </div>
+                <div class="fog-low right">
+                    <img src="assets/img/fog-low.png" alt="">
+                </div>
+            </div>
+
+            <h2 class="presentation-subtitle text-center">Sistema de Recomendación de Eventos de Música</h2>
+            <br><br>
+            <!--Descripciones-->
+            <!--<h5 class="description text-center">¿Esta interesado en buscar conciertos y festivales de música personalizados
+                de acuerdo a su estilo?
+            </h5>
+            <h5 class="description text-center">¡No pierda más tiempo! Nosotros conocemos tu estilo y queremos que disfrutes
+                de los mejores eventos de música</h5>-->
+
+            <!--<br />
+            <div class="row justify-content-md-center sharing-area text-center">
+                <div class="text-center col-md-12 col-lg-8">
+                    <a href="#/register" class="btn btn-outline-neutral btn-round"><i
+                            class="fa fa-play"></i>Encuentre recomendaciones!!</a>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+</div>
+<!--Cabecera alterna-->
+<!--
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/daniel-olahh.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center">
+            <h1>Example page</h1>
+            <h3>Start designing your landing page here.</h3>
+            <br />
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
+            <button type="button" class="btn btn-outline-neutral btn-round">Download</button>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="main">
+    <div class="section section-dark text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto">
+                    <!--<h2 class="title">SREM</h2>-->
+                    <h5 class="description">¿Esta interesado en buscar conciertos y festivales de música personalizados
+                        de acuerdo a su estilo?
+                    </h5>
+                    <h5 class="description">¡No pierda más tiempo! Nosotros conocemos tus gustos musicales y queremos
+                        que disfrutes
+                        de los mejores eventos de música</h5>
+                    <div class="row justify-content-md-center sharing-area text-center">
+                        <div class="text-center col-md-12 col-lg-8">
+                            <button (click)="recomendarEventos()" type="button"
+                                class="btn btn-outline-success btn-round btn-lg"><i class="nc-icon nc-satisfied"></i>
+                                Encuentre sus recomendaciones !! </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-dark text-center">
+        <div class="container">
+            <h2 class="title" style="margin-bottom: 50px;" (click)="log()">Tus eventos de música favoritos</h2>
+            <div class="row">
+
+                <div *ngFor="let evento of eventosRecomendados" class="col-md-4" style="margin-bottom: 50px;">
+                    <div class="info">
+                        <img style="max-width: 100%;" *ngIf="evento.imagen" [src]="evento.imagen" alt="icon icon-info">
+
+                        <div *ngIf="!evento.imagen" class=" info">
+                            <div class="icon icon-info">
+                                <i class="nc-icon nc-calendar-60"></i>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title" style="margin-top: 10px;">{{evento.nombreEvento}}</h4>
+                            <br>
+                            <p>{{evento.descripcion}}</p>
+                            <a href="{{evento.enlace}} " class="btn btn-outline-info btn-round"
+                                style="margin-top: 10px;">Ver detalles
+                                del evento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-4" style="margin-bottom: 50px;">
+                    <div class="info">
+                        <div class="icon icon-info">
+                            <i class="nc-icon nc-calendar-60"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title" style="margin-top: 10px;">VIVO X EL ROCK</h4>
+                            <br>
+                            <p>Vivo x el Rock es un festival musical original de Perú que ofrece bandas de Rock
+                                alternativo, blues rock, fusion rock, punk rock, indie rock, nu metal, rap y rock pop.
+                                Empezando en mayo de 2013, ha venido realizando dos conciertos por año hasta la fecha.
+                            </p>
+                            <a href="#pkp" class="btn btn-outline-info btn-round" style="margin-top: 10px;">Ver detalles
+                                del evento</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section section-dark text-center">
+        <div class="container">
+            <h2 class="title">Tus artistas favoritos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/artists/the-strokes.jpg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">The Strokes</h4>
+                                    <h6 class="card-category">Indie rock, Garage rock, Post-punk revival</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                The strokes es una banda de rock originaria de Nueva York Estados Unidos formada en
+                                1998. Tras el lanzamiento de su álbum debut Is This It en 2001, muchos críticos
+                                nombraron al grupo como: «Los salvadores del rock». Han vendido más de 8 millones de
+                                copias en todo el mundo.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#pkp" class="btn btn-outline-success btn-round">Ver detalles del artista</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/artists/muse.jpg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">MUSE</h4>
+                                    <h6 class="card-category">Rock alternativo, Rock progresivo, Art rock</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                Muse es una banda británica de rock alternativo formada en 1994 en Inglaterra. Desde su
+                                formación en la década de los 90, sus integrantes son: Matt Bellamy; Dominic Howard; y
+                                Christopher Wolstenholme.​​
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#pkp" class="btn btn-outline-success btn-round">Ver detalles del artista</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/artists/armonia-10.jpg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">Armonia 10</h4>
+                                    <h6 class="card-category">Cumbia</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                Armonía 10 es un grupo musical de cumbia peruana. Nació el año de 1972 en el
+                                Asentamiento Humano "San Martín", en el Sector Oeste de la ciudad de Piura.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <!--ENLACES DE REDES SOCIALES DE LOS ARTISTAS-->
+                            <!--<a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i
+                                    class="fa fa-google-plus"></i></a>
+                            <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i
+                                    class="fa fa-linkedin"></i></a>-->
+                            <a href="#pkp" class="btn btn-outline-success btn-round">Ver detalles del artista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
