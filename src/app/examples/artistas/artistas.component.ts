@@ -9,6 +9,13 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 export class ArtistasComponent implements OnInit {
 
   date: { year: number, month: number };
+  test: Date = new Date();
+  focus;
+  focus1;
+  focus2;
+  focus3;
+  focus4;
+  focus5;
   model: NgbDateStruct;
   constructor(private renderer: Renderer2) { }
   isWeekend(date: NgbDateStruct) {
